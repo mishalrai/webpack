@@ -1,0 +1,39 @@
+{
+  "name": "nucleus-dynamic-board",
+  "version": "1.0.0",
+  "description": "Visualization data in board structure. x-axis and y-axis data  and label are dynamic.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --progress --watch --mode=development",
+    "build": "webpack --progress --mode=production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/minrai/nucleus-dynamic-board.git"
+  },
+  "keywords": [
+    "board",
+    "d3",
+    "visualization"
+  ],
+  "author": "itonics",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/minrai/nucleus-dynamic-board#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "autoprefixer": "^9.7.0",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.2.0",
+    "cssnano": "^4.1.10",
+    "mini-css-extract-plugin": "^0.8.0",
+    "node-sass": "^4.13.0",
+    "postcss-loader": "^3.0.0",
+    "sass": "^1.23.1",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9"
+  }
+}
