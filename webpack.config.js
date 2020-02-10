@@ -1,6 +1,7 @@
 // Webpack uses this to work with directories
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
 
 
 // This is main configuration object.
@@ -62,7 +63,24 @@ module.exports = (env, argv) => {
                             }
                         }
                     ]
+                },
+                {
+                    // Now we apply rule for images
+                    test: /\.(png|jpe?g|gif|svg)$/,
+                    use: [
+                           {
+                             // Using file-loader for these files
+                             loader: "file-loader",
+              
+                             // In options we can set different things like format
+                             // and directory to save
+                             options: {
+                               outputPath: './assets/build/img/'
+                             }
+                           }
+                        ]
                 }
+                
             ]
         },
 
@@ -70,7 +88,10 @@ module.exports = (env, argv) => {
             new MiniCssExtractPlugin({
                 filename: 'development' === argv.mode ? "style.css" : "style.min.css",
                 chunkFilename: '[id].css'
-            })
+            }),
+            new CopyPlugin([
+                { from: './assets/src/img/', to: '../dist/img/' },
+            ]),
         ]
     };
 
