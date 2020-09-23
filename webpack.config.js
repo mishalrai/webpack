@@ -45,6 +45,7 @@ module.exports = (env, argv) => {
                             loader: "css-loader",
                             options: {
                                 sourceMap: true,
+                                url: false, 
                             }
                         },
                         {
@@ -63,22 +64,6 @@ module.exports = (env, argv) => {
                             }
                         }
                     ]
-                },
-                {
-                    // Now we apply rule for images
-                    test: /\.(png|jpe?g|gif|svg)$/,
-                    use: [
-                           {
-                             // Using file-loader for these files
-                             loader: "file-loader",
-              
-                             // In options we can set different things like format
-                             // and directory to save
-                             options: {
-                               outputPath: './assets/build/img/'
-                             }
-                           }
-                        ]
                 }
                 
             ]
