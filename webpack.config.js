@@ -2,6 +2,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require('copy-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 
 // This is main configuration object.
@@ -65,7 +66,6 @@ module.exports = (env, argv) => {
                         }
                     ]
                 }
-                
             ]
         },
 
@@ -77,6 +77,11 @@ module.exports = (env, argv) => {
             new CopyPlugin([
                 { from: './assets/src/img/', to: '../dist/img/' },
             ]),
+            new BrowserSyncPlugin({
+                host: 'localhost',
+                port: 3000,
+                server: '.'// { baseDir: ['index.html'] }
+            })
         ]
     };
 
