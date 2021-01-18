@@ -23,6 +23,8 @@
   "homepage": "https://bitbucket.org/minrai/nucleus-dynamic-board#readme",
   "devDependencies": {
     "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-private-methods": "^7.12.1",
     "@babel/preset-env": "^7.12.10",
     "autoprefixer": "^9.7.0",
     "babel-loader": "^8.2.2",
